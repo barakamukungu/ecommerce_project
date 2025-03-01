@@ -1,0 +1,121 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <style>
+        .checkout-container {
+            margin-top: 5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .checkout-heading {
+            font-family: var(--primary-font);
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .order-summary {
+            width: 80%;
+            margin-bottom: 2rem;
+        }
+
+        .order-summary h2 {
+            font-family: var(--primary-font);
+            margin-bottom: 1rem;
+        }
+
+        .order-summary table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .order-summary table th, .order-summary table td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+        }
+
+        .checkout-summary {
+            font-family: var(--primary-font);
+            background: #f8f8f8;
+            padding: 20px;
+            width: 60%;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        .checkout-summary p {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0;
+        }
+
+        .checkout-summary h3 {
+            font-size: 1.5rem;
+            color: var(--main-color);
+        }
+
+        .checkout-actions {
+            margin-top: 20px;
+        }
+
+        .checkout-actions .btn-fill, .checkout-actions .btn-outline {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    {% block content %}
+
+    <div class="checkout-container">
+        <h1 class="checkout-heading">CHECKOUT</h1>
+
+        <div class="order-summary">
+            <h2>Order Summary</h2>
+            {% if cart_items %}
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            <th>Subtotal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in cart_items %}
+                        <tr>
+                            <td>{{ item.product.name }}</td>
+                            <td>{{ item.quantity }}</td>
+                            <td>${{ item.product.price }}</td>
+                            <td>${{ item.product.price|floatformat:2 }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                
+                <div class="checkout-summary">
+                    <h2>Order Summary</h2>
+                    <p>Subtotal: <span>${{ subtotal|floatformat:2 }}</span></p>
+                    <p>Tax (10%): <span>${{ tax|floatformat:2 }}</span></p>
+                    <p>Shipping Fee: <span>${{ shipping_fee|floatformat:2 }}</span></p>
+                    <hr>
+                    <h3>Total: <span>${{ total|floatformat:2 }}</span></h3>
+                </div>
+            {% else %}
+                <p>Your cart is empty.</p>
+            {% endif %}
+        </div>
+
+        <div class="checkout-actions">
+            <a href="{% url 'cart' %}" class="btn-outline">Return to Cart</a>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+</html>

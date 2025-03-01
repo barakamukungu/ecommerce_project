@@ -1,0 +1,172 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Cart</title>
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+    <style>
+        .cart-container {
+            margin-top: 10rem;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cart-container .cart-heading {
+            font-family: var(--primary-font);
+            font-size: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .cart-container .cart-items {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            max-width: 60rem;
+        }
+
+        .cart-container .cart-items .cart-item {
+            margin: 20px;
+            text-align: center;
+        }
+
+        .cart-container .cart-items .cart-item-layer {
+            background: #ebf1f0;
+            padding: 40px;
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+
+        .cart-container .cart-items .cart-item-layer img {
+            width: 150px;
+            height: 200px;
+        }
+
+        .cart-container .cart-items .cart-item .cart-item-name {
+            font-family: var(--primary-font);
+            margin-bottom: 10px;
+        }
+
+        .cart-container .cart-items .cart-item .cart-item-price {
+            font-family: var(--primary-font);
+            margin-bottom: 10px;
+        }
+
+        .cart-container .cart-items .cart-item .quantity-control {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .cart-container .cart-items .cart-item .quantity-control button {
+            background: var(--main-color);
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .cart-container .cart-items .cart-item .quantity-control button:hover {
+            background: white;
+            color: var(--main-color);
+            border: 1px solid var(--main-color);
+        }
+
+        .cart-container .cart-summary {
+            margin-top: 20px;
+            text-align: center;
+            font-family: var(--primary-font);
+        }
+
+        .cart-container .cart-summary h4 {
+            font-size: 1.5rem;
+        }
+
+        .cart-container .cart-summary .btns {
+            margin-top: 10px;
+        }
+
+        .cart-container .cart-summary .btns .btn-fill {
+            background: var(--main-color);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: all 0.5s ease-out;
+        }
+
+        .cart-container .cart-summary .btns .btn-fill:hover {
+            background: white;
+            border: 1px solid var(--main-color);
+            color: var(--main-color);
+        }
+
+        .cart-container .cart-summary .btns .btn-outline {
+            border: 2px solid var(--main-color);
+            color: var(--main-color);
+            background: transparent;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: all 0.5s ease-out;
+        }
+
+        .cart-container .cart-summary .btns .btn-outline:hover {
+            background: var(--main-color);
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    {% block content %}
+    
+    <div class="cart-container">
+        <h1 class="cart-heading">YOUR CART</h1>
+    
+        {% if cart_items %}
+        <div class="cart-items">
+            {% for item in cart_items %}
+            <div class="cart-item">
+                <div class="cart-item-layer">
+                    <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                </div>
+                <h4 class="cart-item-name">{{ item.product.name }}</h4>
+                <p class="cart-item-price">${{ item.product.price }}</p>
+    
+                <div class="quantity-control">
+                    <a href="{% url 'update_cart' item.product.id item.quantity|add:-1 %}" class="btn-fill">−</a>
+                    <span class="px-2">{{ item.quantity }}</span>
+                    <a href="{% url 'update_cart' item.product.id item.quantity|add:1 %}" class="btn-fill">+</a>
+                </div>
+    
+                <p class="cart-item-price">Subtotal: ${{ item.subtotal }}</p>
+    
+                <a href="{% url 'remove_from_cart' item.product.id %}" class="btn-outline">Remove</a>
+            </div>
+            {% endfor %}
+        </div>
+    
+        <div class="cart-summary">
+            <h4>Total: ${{ total }}</h4>
+            <div class="btns">
+                <a href="{% url 'checkout' %}" class="btn-fill">Proceed to Checkout</a>
+                <a href="{% url 'clear_cart' %}" class="btn-outline">Clear Cart</a>
+            </div>
+        </div>
+    
+        {% else %}
+        <p class="text-center">Your cart is empty!</p>
+        {% endif %}
+    </div>
+    {% endblock %}
+    
+
+    <a href="{% url 'home' %}">Continue Shopping</a>
+
+</body>
+</html>

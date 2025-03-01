@@ -1,0 +1,253 @@
+﻿2025-02-28 20:41:14.625   Log opened. (Time zone: UTC+03:00)
+2025-02-28 20:41:14.625   Setup version: Inno Setup version 6.3.3
+2025-02-28 20:41:14.625   Original Setup EXE: C:\Users\user\AppData\Local\Temp\WinGet\Git.Git.2.48.1\Git-2.48.1-64-bit.exe
+2025-02-28 20:41:14.625   Setup command line: /SL5="$1904DA,68231710,880640,C:\Users\user\AppData\Local\Temp\WinGet\Git.Git.2.48.1\Git-2.48.1-64-bit.exe" /SPAWNWND=$2B04CA /NOTIFYWND=$3B04A8 /SP- /SILENT /SUPPRESSMSGBOXES /NORESTART /LOG="C:\Users\user\AppData\Local\Packages\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe\LocalState\DiagOutputDir\WinGet-Git.Git.2.48.1-2025-02-28-20-40-54.540.log" /COMPONENTS=icons,ext,gitlfs,assoc,assoc_sh,consolefont,windowsterminal,scalar
+2025-02-28 20:41:14.625   Compatibility mode: Yes (DetectorsAppHealth Installer)
+2025-02-28 20:41:14.625   Windows version: 10.0.19045
+2025-02-28 20:41:14.625   Windows architecture: x64 (64-bit)
+2025-02-28 20:41:14.625   Machine types supported by system: x86 x64
+2025-02-28 20:41:14.625   User privileges: Administrative
+2025-02-28 20:41:14.787   Administrative install mode: Yes
+2025-02-28 20:41:14.787   Install mode root key: HKEY_LOCAL_MACHINE
+2025-02-28 20:41:14.787   64-bit install mode: Yes
+2025-02-28 20:41:14.787   Created protected temporary directory: C:\Users\user\AppData\Local\Temp\is-PDQ2N.tmp
+2025-02-28 20:41:14.818   -- DLL function import --
+2025-02-28 20:41:14.818   Function name: SetEnvironmentVariableW
+2025-02-28 20:41:14.818   DLL name: Kernel32.dll
+2025-02-28 20:41:14.818   Dest DLL name: Kernel32.dll
+2025-02-28 20:41:14.818   Importing the DLL function.
+2025-02-28 20:41:14.818   Successfully imported the DLL function. Delay loaded? Yes
+2025-02-28 20:41:14.818   -- DLL function import --
+2025-02-28 20:41:14.818   Function name: SetEnvironmentVariableW
+2025-02-28 20:41:14.818   DLL name: Kernel32.dll
+2025-02-28 20:41:14.818   Dest DLL name: Kernel32.dll
+2025-02-28 20:41:14.818   Importing the DLL function.
+2025-02-28 20:41:14.818   Successfully imported the DLL function. Delay loaded? Yes
+2025-02-28 20:41:14.818   -- DLL function import --
+2025-02-28 20:41:14.818   Function name: CloseHandle
+2025-02-28 20:41:14.818   DLL name: Kernel32.dll
+2025-02-28 20:41:14.818   Dest DLL name: Kernel32.dll
+2025-02-28 20:41:14.818   Importing the DLL function.
+2025-02-28 20:41:14.818   Successfully imported the DLL function. Delay loaded? No
+2025-02-28 20:41:14.818   -- DLL function import --
+2025-02-28 20:41:14.818   Function name: GetFileVersionInfoSizeA
+2025-02-28 20:41:14.818   DLL name: Version.dll
+2025-02-28 20:41:14.818   Dest DLL name: Version.dll
+2025-02-28 20:41:14.818   Importing the DLL function.
+2025-02-28 20:41:14.818   Successfully imported the DLL function. Delay loaded? No
+2025-02-28 20:41:14.818   -- DLL function import --
+2025-02-28 20:41:14.818   Function name: GetFileVersionInfoA
+2025-02-28 20:41:14.818   DLL name: Version.dll
+2025-02-28 20:41:14.818   Dest DLL name: Version.dll
+2025-02-28 20:41:14.818   Importing the DLL function.
+2025-02-28 20:41:14.818   Successfully imported the DLL function. Delay loaded? No
+2025-02-28 20:41:14.818   -- DLL function import --
+2025-02-28 20:41:14.818   Function name: VerQueryValueA
+2025-02-28 20:41:14.818   DLL name: Version.dll
+2025-02-28 20:41:14.818   Dest DLL name: Version.dll
+2025-02-28 20:41:14.818   Importing the DLL function.
+2025-02-28 20:41:14.818   Successfully imported the DLL function. Delay loaded? No
+2025-02-28 20:41:14.818   -- DLL function import --
+2025-02-28 20:41:14.818   Function name: CreateToolhelp32Snapshot
+2025-02-28 20:41:14.818   DLL name: Kernel32.dll
+2025-02-28 20:41:14.818   Dest DLL name: Kernel32.dll
+2025-02-28 20:41:14.818   Importing the DLL function.
+2025-02-28 20:41:14.818   Successfully imported the DLL function. Delay loaded? Yes
+2025-02-28 20:41:14.818   -- DLL function import --
+2025-02-28 20:41:14.818   Function name: Process32FirstW
+2025-02-28 20:41:14.818   DLL name: Kernel32.dll
+2025-02-28 20:41:14.818   Dest DLL name: Kernel32.dll
+2025-02-28 20:41:14.818   Importing the DLL function.
+2025-02-28 20:41:14.818   Successfully imported the DLL function. Delay loaded? Yes
+2025-02-28 20:41:14.818   -- DLL function import --
+2025-02-28 20:41:14.818   Function name: Process32NextW
+2025-02-28 20:41:14.818   DLL name: Kernel32.dll
+2025-02-28 20:41:14.818   Dest DLL name: Kernel32.dll
+2025-02-28 20:41:14.818   Importing the DLL function.
+2025-02-28 20:41:14.818   Successfully imported the DLL function. Delay loaded? Yes
+2025-02-28 20:41:14.818   -- DLL function import --
+2025-02-28 20:41:14.818   Function name: Module32FirstW
+2025-02-28 20:41:14.818   DLL name: Kernel32.dll
+2025-02-28 20:41:14.818   Dest DLL name: Kernel32.dll
+2025-02-28 20:41:14.818   Importing the DLL function.
+2025-02-28 20:41:14.818   Successfully imported the DLL function. Delay loaded? Yes
+2025-02-28 20:41:14.818   -- DLL function import --
+2025-02-28 20:41:14.818   Function name: Module32NextW
+2025-02-28 20:41:14.818   DLL name: Kernel32.dll
+2025-02-28 20:41:14.818   Dest DLL name: Kernel32.dll
+2025-02-28 20:41:14.818   Importing the DLL function.
+2025-02-28 20:41:14.818   Successfully imported the DLL function. Delay loaded? Yes
+2025-02-28 20:41:14.818   -- DLL function import --
+2025-02-28 20:41:14.818   Function name: EnumProcesses
+2025-02-28 20:41:14.818   DLL name: Psapi.dll
+2025-02-28 20:41:14.818   Dest DLL name: Psapi.dll
+2025-02-28 20:41:14.818   Importing the DLL function.
+2025-02-28 20:41:14.818   Successfully imported the DLL function. Delay loaded? Yes
+2025-02-28 20:41:14.818   -- DLL function import --
+2025-02-28 20:41:14.818   Function name: EnumProcessModules
+2025-02-28 20:41:14.818   DLL name: Psapi.dll
+2025-02-28 20:41:14.818   Dest DLL name: Psapi.dll
+2025-02-28 20:41:14.818   Importing the DLL function.
+2025-02-28 20:41:14.818   Successfully imported the DLL function. Delay loaded? Yes
+2025-02-28 20:41:14.818   -- DLL function import --
+2025-02-28 20:41:14.818   Function name: OpenProcess
+2025-02-28 20:41:14.818   DLL name: Kernel32.dll
+2025-02-28 20:41:14.818   Dest DLL name: Kernel32.dll
+2025-02-28 20:41:14.818   Importing the DLL function.
+2025-02-28 20:41:14.818   Successfully imported the DLL function. Delay loaded? Yes
+2025-02-28 20:41:14.818   -- DLL function import --
+2025-02-28 20:41:14.818   Function name: GetModuleFileNameExW
+2025-02-28 20:41:14.818   DLL name: Psapi.dll
+2025-02-28 20:41:14.818   Dest DLL name: Psapi.dll
+2025-02-28 20:41:14.818   Importing the DLL function.
+2025-02-28 20:41:14.818   Successfully imported the DLL function. Delay loaded? Yes
+2025-02-28 20:41:14.818   -- DLL function import --
+2025-02-28 20:41:14.818   Function name: RmStartSession
+2025-02-28 20:41:14.818   DLL name: Rstrtmgr.dll
+2025-02-28 20:41:14.818   Dest DLL name: Rstrtmgr.dll
+2025-02-28 20:41:14.818   Importing the DLL function.
+2025-02-28 20:41:14.818   Successfully imported the DLL function. Delay loaded? Yes
+2025-02-28 20:41:14.818   -- DLL function import --
+2025-02-28 20:41:14.818   Function name: RmEndSession
+2025-02-28 20:41:14.818   DLL name: Rstrtmgr.dll
+2025-02-28 20:41:14.818   Dest DLL name: Rstrtmgr.dll
+2025-02-28 20:41:14.818   Importing the DLL function.
+2025-02-28 20:41:14.818   Successfully imported the DLL function. Delay loaded? Yes
+2025-02-28 20:41:14.818   -- DLL function import --
+2025-02-28 20:41:14.818   Function name: RmRegisterResources
+2025-02-28 20:41:14.818   DLL name: Rstrtmgr.dll
+2025-02-28 20:41:14.818   Dest DLL name: Rstrtmgr.dll
+2025-02-28 20:41:14.818   Importing the DLL function.
+2025-02-28 20:41:14.818   Successfully imported the DLL function. Delay loaded? Yes
+2025-02-28 20:41:14.818   -- DLL function import --
+2025-02-28 20:41:14.818   Function name: RmGetList
+2025-02-28 20:41:14.818   DLL name: Rstrtmgr.dll
+2025-02-28 20:41:14.818   Dest DLL name: Rstrtmgr.dll
+2025-02-28 20:41:14.818   Importing the DLL function.
+2025-02-28 20:41:14.818   Successfully imported the DLL function. Delay loaded? Yes
+2025-02-28 20:41:14.818   -- DLL function import --
+2025-02-28 20:41:14.818   Function name: RmShutdown
+2025-02-28 20:41:14.818   DLL name: Rstrtmgr.dll
+2025-02-28 20:41:14.818   Dest DLL name: Rstrtmgr.dll
+2025-02-28 20:41:14.818   Importing the DLL function.
+2025-02-28 20:41:14.818   Successfully imported the DLL function. Delay loaded? Yes
+2025-02-28 20:41:14.818   -- DLL function import --
+2025-02-28 20:41:14.818   Function name: RmRestart
+2025-02-28 20:41:14.818   DLL name: Rstrtmgr.dll
+2025-02-28 20:41:14.818   Dest DLL name: Rstrtmgr.dll
+2025-02-28 20:41:14.818   Importing the DLL function.
+2025-02-28 20:41:14.818   Successfully imported the DLL function. Delay loaded? Yes
+2025-02-28 20:41:14.818   -- DLL function import --
+2025-02-28 20:41:14.818   Function name: TerminateProcess
+2025-02-28 20:41:14.818   DLL name: Kernel32.dll
+2025-02-28 20:41:14.818   Dest DLL name: Kernel32.dll
+2025-02-28 20:41:14.818   Importing the DLL function.
+2025-02-28 20:41:14.818   Successfully imported the DLL function. Delay loaded? No
+2025-02-28 20:41:14.818   -- DLL function import --
+2025-02-28 20:41:14.818   Function name: WaitForSingleObject
+2025-02-28 20:41:14.818   DLL name: Kernel32.dll
+2025-02-28 20:41:14.818   Dest DLL name: Kernel32.dll
+2025-02-28 20:41:14.818   Importing the DLL function.
+2025-02-28 20:41:14.818   Successfully imported the DLL function. Delay loaded? No
+2025-02-28 20:41:14.818   -- DLL function import --
+2025-02-28 20:41:14.818   Function name: CreatePipe
+2025-02-28 20:41:14.818   DLL name: kernel32.dll
+2025-02-28 20:41:14.818   Dest DLL name: kernel32.dll
+2025-02-28 20:41:14.818   Importing the DLL function.
+2025-02-28 20:41:14.818   Successfully imported the DLL function. Delay loaded? No
+2025-02-28 20:41:14.818   -- DLL function import --
+2025-02-28 20:41:14.818   Function name: SetHandleInformation
+2025-02-28 20:41:14.818   DLL name: kernel32.dll
+2025-02-28 20:41:14.818   Dest DLL name: kernel32.dll
+2025-02-28 20:41:14.818   Importing the DLL function.
+2025-02-28 20:41:14.818   Successfully imported the DLL function. Delay loaded? No
+2025-02-28 20:41:14.818   -- DLL function import --
+2025-02-28 20:41:14.818   Function name: CreateProcessA
+2025-02-28 20:41:14.818   DLL name: kernel32.dll
+2025-02-28 20:41:14.818   Dest DLL name: kernel32.dll
+2025-02-28 20:41:14.818   Importing the DLL function.
+2025-02-28 20:41:14.818   Successfully imported the DLL function. Delay loaded? No
+2025-02-28 20:41:14.818   -- DLL function import --
+2025-02-28 20:41:14.818   Function name: ReadFile
+2025-02-28 20:41:14.818   DLL name: kernel32.dll
+2025-02-28 20:41:14.818   Dest DLL name: kernel32.dll
+2025-02-28 20:41:14.818   Importing the DLL function.
+2025-02-28 20:41:14.818   Successfully imported the DLL function. Delay loaded? No
+2025-02-28 20:41:14.818   -- DLL function import --
+2025-02-28 20:41:14.818   Function name: PeekMessageA
+2025-02-28 20:41:14.818   DLL name: user32.dll
+2025-02-28 20:41:14.818   Dest DLL name: user32.dll
+2025-02-28 20:41:14.818   Importing the DLL function.
+2025-02-28 20:41:14.818   Successfully imported the DLL function. Delay loaded? No
+2025-02-28 20:41:14.818   -- DLL function import --
+2025-02-28 20:41:14.818   Function name: TranslateMessage
+2025-02-28 20:41:14.818   DLL name: user32.dll
+2025-02-28 20:41:14.818   Dest DLL name: user32.dll
+2025-02-28 20:41:14.818   Importing the DLL function.
+2025-02-28 20:41:14.818   Successfully imported the DLL function. Delay loaded? No
+2025-02-28 20:41:14.818   -- DLL function import --
+2025-02-28 20:41:14.818   Function name: DispatchMessageA
+2025-02-28 20:41:14.818   DLL name: user32.dll
+2025-02-28 20:41:14.818   Dest DLL name: user32.dll
+2025-02-28 20:41:14.818   Importing the DLL function.
+2025-02-28 20:41:14.818   Successfully imported the DLL function. Delay loaded? No
+2025-02-28 20:41:14.818   -- DLL function import --
+2025-02-28 20:41:14.818   Function name: PeekNamedPipe
+2025-02-28 20:41:14.818   DLL name: kernel32.dll
+2025-02-28 20:41:14.818   Dest DLL name: kernel32.dll
+2025-02-28 20:41:14.818   Importing the DLL function.
+2025-02-28 20:41:14.818   Successfully imported the DLL function. Delay loaded? No
+2025-02-28 20:41:14.818   -- DLL function import --
+2025-02-28 20:41:14.818   Function name: GetExitCodeProcess
+2025-02-28 20:41:14.818   DLL name: kernel32.dll
+2025-02-28 20:41:14.818   Dest DLL name: kernel32.dll
+2025-02-28 20:41:14.818   Importing the DLL function.
+2025-02-28 20:41:14.818   Successfully imported the DLL function. Delay loaded? No
+2025-02-28 20:41:14.818   -- DLL function import --
+2025-02-28 20:41:14.818   Function name: GetLastError
+2025-02-28 20:41:14.818   DLL name: kernel32.dll
+2025-02-28 20:41:14.818   Dest DLL name: kernel32.dll
+2025-02-28 20:41:14.818   Importing the DLL function.
+2025-02-28 20:41:14.818   Successfully imported the DLL function. Delay loaded? No
+2025-02-28 20:41:14.818   -- DLL function import --
+2025-02-28 20:41:14.818   Function name: CreateHardLinkW
+2025-02-28 20:41:14.818   DLL name: setup:Kernel32.dll
+2025-02-28 20:41:14.818   Dest DLL name: Kernel32.dll
+2025-02-28 20:41:14.818   Importing the DLL function.
+2025-02-28 20:41:14.818   Successfully imported the DLL function. Delay loaded? Yes
+2025-02-28 20:41:14.818   -- DLL function import --
+2025-02-28 20:41:14.818   Function name: ExitProcess
+2025-02-28 20:41:14.818   DLL name: kernel32.dll
+2025-02-28 20:41:14.818   Dest DLL name: kernel32.dll
+2025-02-28 20:41:14.818   Importing the DLL function.
+2025-02-28 20:41:14.818   Successfully imported the DLL function. Delay loaded? No
+2025-02-28 20:41:14.818   -- DLL function import --
+2025-02-28 20:41:14.818   Function name: GetFileAttributesA
+2025-02-28 20:41:14.818   DLL name: kernel32.dll
+2025-02-28 20:41:14.818   Dest DLL name: kernel32.dll
+2025-02-28 20:41:14.818   Importing the DLL function.
+2025-02-28 20:41:14.818   Successfully imported the DLL function. Delay loaded? No
+2025-02-28 20:41:14.818   -- DLL function import --
+2025-02-28 20:41:14.818   Function name: SetFileAttributesA
+2025-02-28 20:41:14.818   DLL name: kernel32.dll
+2025-02-28 20:41:14.818   Dest DLL name: kernel32.dll
+2025-02-28 20:41:14.818   Importing the DLL function.
+2025-02-28 20:41:14.818   Successfully imported the DLL function. Delay loaded? No
+2025-02-28 20:41:14.818   -- DLL function import --
+2025-02-28 20:41:14.818   Function name: CryptStringToBinaryW
+2025-02-28 20:41:14.818   DLL name: crypt32.dll
+2025-02-28 20:41:14.818   Dest DLL name: crypt32.dll
+2025-02-28 20:41:14.818   Importing the DLL function.
+2025-02-28 20:41:14.952   Successfully imported the DLL function. Delay loaded? No
+2025-02-28 20:41:26.832   Defaulting to Cancel for suppressed message box (Retry/Cancel):
+                          The following process(es) use Git for Windows:
+                          
+                          MSYS2 terminal (PID 11452)
+                          bash (PID 11116)
+                          
+                          Please terminate those processes and retry.
+                          Alternatively, cancel to abandon setup altogether.
+2025-02-28 20:41:26.832   Failed to proceed to next wizard page; aborting.
+2025-02-28 20:41:26.832   Got EAbort exception.
+2025-02-28 20:41:26.832   Deinitializing Setup.
+2025-02-28 20:41:26.917   Log closed.

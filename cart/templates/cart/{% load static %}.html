@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Cart</title>
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+</head>
+<body>
+
+<h1>Your Cart</h1>
+
+{% if cart_items %}
+    {% for item in cart_items %}
+        <div class="cart-item">
+            <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" width="100">
+            <h3>{{ item.product.name }}</h3>
+            <p>Price: ${{ item.product.price }}</p>
+            <p>Quantity: {{ item.quantity }}</p>
+            <p>Subtotal: ${{ item.subtotal }}</p>
+
+            <a href="{% url 'update_cart' item.product.id 1 %}">Update Quantity</a>
+            <a href="{% url 'remove_from_cart' item.product.id %}">Remove</a>
+        </div>
+    {% endfor %}
+    
+    <h3>Total: ${{ total }}</h3>
+    <a href="{% url 'checkout' %}">Proceed to Checkout</a>
+    <a href="{% url 'clear_cart' %}">Clear Cart</a>
+{% else %}
+    <p>No items in cart!</p>
+{% endif %}
+
+<a href="{% url 'home' %}">Continue Shopping</a>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<form method="GET">
+  {{ form.as_p }}
+  <button type="submit">Filter</button>
+</form>
+
+<ul>
+  {% for product in products %}
+      <li>
+          <h3>{{ product.name }}</h3>
+          <p>Price: ${{ product.price }}</p>
+          <p>Category: {{ product.get_category_display }}</p>
+      </li>
+  {% endfor %}
+</ul>
+
+<input type="text" id="searchQuery" placeholder="Search products">
+<input type="number" id="minPrice" placeholder="Min Price">
+<input type="number" id="maxPrice" placeholder="Max Price">
+<input type="number" id="minRating" placeholder="Min Rating (1-5)">
+<label><input type="checkbox" id="inStock"> In Stock</label>
+<button id="filterBtn">Apply Filters</button>
+
+<div id="productList"></div>
+
+<script>
+    document.getElementById("filterBtn").addEventListener("click", function() {
+        let category = document.getElementById("categoryFilter").value;
+        let minPrice = document.getElementById("minPrice").value;
+        let maxPrice = document.getElementById("maxPrice").value;
+        let searchQuery = document.getElementById("searchQuery").value;
+        let minRating = document.getElementById("minRating").value;
+        let inStock = document.getElementById("inStock").checked ? "true" : "false";
+
+        let url = `/filter-products/?category=${category}&min_price=${minPrice}&max_price=${maxPrice}&search=${searchQuery}&min_rating=${minRating}&in_stock=${inStock}`;
+        
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                let productList = document.getElementById("productList");
+                productList.innerHTML = "";
+                data.products.forEach(product => {
+                  productList.innerHTML += `<p>${product.name} - $${product.price} | Rating: ${product.rating} | Stock: ${product.stock}</p>`;
+                });
+            });
+    });
+</script>

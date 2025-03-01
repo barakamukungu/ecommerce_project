@@ -1,0 +1,17 @@
+{% extends "admin/base_site.html" %}
+
+{% block content %}
+<h2>Best-Selling Products</h2>
+<table>
+    <tr>
+        <th>Product</th>
+        <th>Total Sold</th>
+    </tr>
+    {% for product in best_sellers %}
+    <tr>
+        <td>{{ product.product__name }}</td>
+        <td>{{ product.total_sold }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

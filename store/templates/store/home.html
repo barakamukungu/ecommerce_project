@@ -1,0 +1,160 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hoodie</title>
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <h1>Logo</h1>
+      </div>
+      <div class="burger dropdown">
+        <span></span>
+        <span></span>
+        <span></span>
+      <div class="dropdown-content">
+        <a href="#products">Products</a>
+        <a href="#offers">Offers</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="{% url 'home' %}">Home</a>
+        
+      </div>
+      </div>
+    </nav>
+
+    <header>
+      <div class="header-content">
+        <h1 class="main-headings">
+          New Cocktail <br />
+          <span>Hoodies</span>
+        </h1>
+        <p class="primary-headings">
+          We have the best quality hoodies created to cater for your needs. Our store provides you with comfort and style all year long.
+        </p>
+        <div class="btns-container">
+          <a href="#products">
+            <button class="btn-fill">Shop Now</button>
+          </a>
+          <a href="#products">
+            <button class="btn-outline active">50% OFF</button>
+          </a>
+        </div>
+      </div>
+      <div class="img-container">
+        <div class="header-img">
+          <img src="{% static 'seven/oswaldo-ibanez-1NPUmTaiMeg-unsplash.jpg' %}">;
+        </div>
+      </div>
+    </header>
+
+    <section class="section-one">
+      <div class="img-container">
+        <div class="section-one-img header-img">
+          <img src="{% static 'seven/gesphotoss-1i9K55ni5Dk-unsplash.jpg' %}">
+        </div>
+      </div>
+
+      <div class="section-content" id="offers">
+        <h1 class="main-headings">
+          Summer <span>Sell <br /> Offer</span> 
+          
+        </h1>
+        <p class="primary-headings">
+          Stay in touch through our website to get access to our offers. Get quality products at discounted prices.
+        </p>
+          <button class="btn-fill">Learn More</button>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="products" id="products">
+      <h1 class="products-heading">OUR PRODUCTS</h1>
+
+      <section class="product-categories">
+        <button class="btn-outline active">NEW ARRIVALS</button>
+        <button class="btn-outline">TOP RATING</button>
+        <button class="btn-outline">BEST SELLER</button>
+      </section>
+
+      <div class="product-items-container">
+        {% for product in products %}
+          <div class="item">
+            <div class="item-layer">
+              <img src="{{ product.image.url }}" alt="{{ product.name }}">
+            </div>
+            <h4 class="item-name">{{ product.name }}</h4>
+            <p class="item-price">${{ product.price }}</p>
+
+            <form action="{% url 'add_to_cart' product.id %}" method="post">
+                {% csrf_token %}
+                <button type="submit" class="btn-fill">Add to Cart</button>
+            </form>
+          </div>
+        {% endfor %}
+      </div>
+    </section>
+
+
+    <h1 class="customers-heading">OUR CLIENT SAYS</h1>
+    <section class="customers-reviews" id="testimonials">
+
+      <div class="customer">
+        <div class="customer-img">
+          <div class="img img-one">
+            <img src="{% static 'seven/yogendra-singh-uWs_N5Dlyiw-unsplash.jpg' %}" alt="">
+          </div>
+        </div>
+     
+        <h1 class="customer-name">Anna Maria</h1>
+    
+        <p class="customer-description">I got exactly what I ordered and it arrived on time too!!</p>
+      </div>
+
+      <div class="customer">
+        <div class="customer-img">
+          <div class="img img-two">
+            <img src="{% static 'seven/joshua-rondeau-xazIYnxpS2Q-unsplash.jpg' %}" alt="">
+          </div>
+        </div>
+        <h1 class="customer-name">Jane Doe</h1>
+
+        <p class="customer-description">The summer sale offers are the best part. Definetely recommend.</p>
+      </div>
+
+      <div class="customer">
+        <div class="customer-img">
+          <div class="img img-three">
+            <img src="{% static 'seven\milan-popovic-kOnmHdLJTNI-unsplash (1).jpg' %}" alt="">
+          </div>
+        </div>
+        <h1 class="customer-name">John Doe</h1>
+        <p class="customer-description">Got my first piece and I love it. Can't wait to purchase more.</p>
+      </div>
+    </section>
+
+
+    <footer>
+      <div class="container">
+      <h1 class="footer-heading">Location</h1>
+      <h2 class="footer-primary-heading">Start With Our Fresh shrimps</h2>
+      <h2 class="footer-primary-heading">4213 Somewhere On Earth</h2>
+    </div>
+      <div class="container">
+      <h1 class="footer-heading">Working Hours</h1>
+      <h2 class="footer-primary-heading">Monday - Thursday - Friday</h2>
+      <h2 class="footer-primary-heading">Saturday - Sunday</h2>
+    </div>
+      <div class="container">
+      <h1 class="footer-heading">Contact Us</h1>
+      <h2 class="footer-primary-heading">hoodies@gmail.com</h2>
+    </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<select id="categoryFilter">
+  <option value="">All Categories</option>
+  <option value="electronics">Hoodies</option>
+  <option value="clothing">Clothing</option>
+</select>
+
+<div id="productList">
+  {% for product in products %}
+      <p>{{ product.name }} - ${{ product.price }}</p>
+  {% endfor %}
+</div>
+
+<script>
+  document.getElementById("categoryFilter").addEventListener("change", function() {
+      let category = this.value;
+      fetch(`/filter-products/?category=${category}`)
+          .then(response => response.json())
+          .then(data => {
+              let productList = document.getElementById("productList");
+              productList.innerHTML = "";
+              data.products.forEach(product => {
+                  productList.innerHTML += `<p>${product.name} - $${product.price}</p>`;
+              });
+          });
+  });
+</script>

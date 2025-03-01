@@ -1,0 +1,4 @@
+<form action="{% url 'checkout' product.id %}" method="POST">
+  {% csrf_token %}
+  <button type="submit">Buy Now</button>
+</form>
