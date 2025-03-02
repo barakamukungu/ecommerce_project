@@ -1,10 +1,9 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Your Cart</title>
-    <link rel="stylesheet" href="{% static 'home.css' %}">
+    <link rel="stylesheet" href="/ecommerce_project/store/static/home.css">
     <style>
         .cart-container {
             margin-top: 10rem;
@@ -125,7 +124,7 @@
 <body>
     <h1>Your Cart</h1>
     <div id="cart-items"></div>
-    <a href="index.html">Continue Shopping</a>
+    <a href="/ecommerce_project/store/templates/store/home.html">Continue Shopping</a>
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
