@@ -148,7 +148,7 @@
 
         function removeFromCart(productId) {
             let cart = JSON.parse(localStorage.getItem("cart")) || [];
-            cart = cart.filter((product) => product.id !== productId);
+            cart = cart.filter((product) => product.id.toString() !== productId.toString()); // Ensure proper comparison
             localStorage.setItem("cart", JSON.stringify(cart));
             location.reload();
         }
