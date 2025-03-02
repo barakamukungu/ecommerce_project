@@ -6,7 +6,7 @@
     <title>Your Cart</title>
     
     <!-- Corrected CSS Path -->
-    <link rel="stylesheet" href="/ecommerce_project/store/static/home.css">
+    <link rel="stylesheet" href="/ecommerce_project/static/home.css">
     
     <style>
         .cart-container {
@@ -98,75 +98,80 @@
     <div class="cart-container">
         <h1 class="cart-heading">Your Cart</h1>
         
-        <div id="cart-items" class="cart-items"></div>
-        
+        <div class="cart-items">
+            <!-- Product 1 -->
+            <div class="cart-item">
+                <img src="/ecommerce_project/static/images/iphone.jpg" alt="iPhone 13">
+                <p class="cart-item-name">iPhone 13</p>
+                <p class="cart-item-price">$799.99</p>
+                <div class="quantity-control">
+                    <button class="quantity-btn" onclick="updateQuantity(0, -1)">-</button>
+                    <span id="quantity-0">1</span>
+                    <button class="quantity-btn" onclick="updateQuantity(0, 1)">+</button>
+                </div>
+                <button class="remove-btn" onclick="removeFromCart(0)">Remove</button>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="cart-item">
+                <img src="/ecommerce_project/static/images/macbook.jpg" alt="MacBook Pro">
+                <p class="cart-item-name">MacBook Pro</p>
+                <p class="cart-item-price">$1,299.99</p>
+                <div class="quantity-control">
+                    <button class="quantity-btn" onclick="updateQuantity(1, -1)">-</button>
+                    <span id="quantity-1">1</span>
+                    <button class="quantity-btn" onclick="updateQuantity(1, 1)">+</button>
+                </div>
+                <button class="remove-btn" onclick="removeFromCart(1)">Remove</button>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="cart-item">
+                <img src="/ecommerce_project/static/images/airpods.jpg" alt="AirPods Pro">
+                <p class="cart-item-name">AirPods Pro</p>
+                <p class="cart-item-price">$249.99</p>
+                <div class="quantity-control">
+                    <button class="quantity-btn" onclick="updateQuantity(2, -1)">-</button>
+                    <span id="quantity-2">1</span>
+                    <button class="quantity-btn" onclick="updateQuantity(2, 1)">+</button>
+                </div>
+                <button class="remove-btn" onclick="removeFromCart(2)">Remove</button>
+            </div>
+        </div>
+
         <div class="cart-summary">
-            <h4>Total: $<span id="cart-total">0.00</span></h4>
+            <h4>Total: $<span id="cart-total">2,349.97</span></h4>
             <button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
         </div>
         
         <br>
-        <a href="/ecommerce_project/store/templates/store/home.html">Continue Shopping</a>
+        <a href="/ecommerce_project/home.html">Continue Shopping</a>
     </div>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            let cart = JSON.parse(localStorage.getItem("cart")) || [];
-            const cartContainer = document.getElementById("cart-items");
-            const cartTotal = document.getElementById("cart-total");
-
-            if (cart.length === 0) {
-                cartContainer.innerHTML = "<p>Your cart is empty.</p>";
-                return;
-            }
-
-            let totalPrice = 0;
-
-            cart.forEach((product, index) => {
-                let productDiv = document.createElement("div");
-                productDiv.classList.add("cart-item");
-
-                totalPrice += product.price * product.quantity;
-
-                productDiv.innerHTML = `
-                    <img src="${product.image}" alt="${product.name}">
-                    <p class="cart-item-name">${product.name}</p>
-                    <p class="cart-item-price">$${(product.price * product.quantity).toFixed(2)}</p>
-                    
-                    <div class="quantity-control">
-                        <button class="quantity-btn" onclick="updateQuantity(${index}, -1)">-</button>
-                        <span>${product.quantity}</span>
-                        <button class="quantity-btn" onclick="updateQuantity(${index}, 1)">+</button>
-                    </div>
-
-                    <button class="remove-btn" onclick="removeFromCart(${index})">Remove</button>
-                `;
-
-                cartContainer.appendChild(productDiv);
-            });
-
-            cartTotal.innerText = totalPrice.toFixed(2);
-        });
+        let cart = [
+            { name: "iPhone 13", price: 799.99, quantity: 1 },
+            { name: "MacBook Pro", price: 1299.99, quantity: 1 },
+            { name: "AirPods Pro", price: 249.99, quantity: 1 }
+        ];
 
         function updateQuantity(index, change) {
-            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            let quantityElement = document.getElementById(`quantity-${index}`);
+            let totalElement = document.getElementById("cart-total");
 
-            if (cart[index]) {
+            if (cart[index].quantity + change > 0) {
                 cart[index].quantity += change;
-                if (cart[index].quantity <= 0) {
-                    cart.splice(index, 1);
-                }
+                quantityElement.innerText = cart[index].quantity;
             }
 
-            localStorage.setItem("cart", JSON.stringify(cart));
-            location.reload();
+            // Update total price
+            let totalPrice = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+            totalElement.innerText = totalPrice.toFixed(2);
         }
 
         function removeFromCart(index) {
-            let cart = JSON.parse(localStorage.getItem("cart")) || [];
             cart.splice(index, 1);
-            localStorage.setItem("cart", JSON.stringify(cart));
-            location.reload();
+            location.reload(); // Refresh page to remove item
         }
 
         function checkout() {
