@@ -123,50 +123,36 @@
     </style>
 </head>
 <body>
-    {% block content %}
-    
-    <div class="cart-container">
-        <h1 class="cart-heading">YOUR CART</h1>
-    
-        {% if cart_items %}
-        <div class="cart-items">
-            {% for item in cart_items %}
-            <div class="cart-item">
-                <div class="cart-item-layer">
-                    <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
-                </div>
-                <h4 class="cart-item-name">{{ item.product.name }}</h4>
-                <p class="cart-item-price">${{ item.product.price }}</p>
-    
-                <div class="quantity-control">
-                    <a href="{% url 'update_cart' item.product.id item.quantity|add:-1 %}" class="btn-fill">−</a>
-                    <span class="px-2">{{ item.quantity }}</span>
-                    <a href="{% url 'update_cart' item.product.id item.quantity|add:1 %}" class="btn-fill">+</a>
-                </div>
-    
-                <p class="cart-item-price">Subtotal: ${{ item.subtotal }}</p>
-    
-                <a href="{% url 'remove_from_cart' item.product.id %}" class="btn-outline">Remove</a>
-            </div>
-            {% endfor %}
-        </div>
-    
-        <div class="cart-summary">
-            <h4>Total: ${{ total }}</h4>
-            <div class="btns">
-                <a href="{% url 'checkout' %}" class="btn-fill">Proceed to Checkout</a>
-                <a href="{% url 'clear_cart' %}" class="btn-outline">Clear Cart</a>
-            </div>
-        </div>
-    
-        {% else %}
-        <p class="text-center">Your cart is empty!</p>
-        {% endif %}
-    </div>
-    {% endblock %}
-    
+    <h1>Your Cart</h1>
+    <div id="cart-items"></div>
+    <a href="index.html">Continue Shopping</a>
 
-    <a href="{% url 'home' %}">Continue Shopping</a>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const cart = JSON.parse(localStorage.getItem("cart")) || [];
+            const cartContainer = document.getElementById("cart-items");
 
+            if (cart.length === 0) {
+                cartContainer.innerHTML = "<p>Your cart is empty.</p>";
+            } else {
+                cart.forEach((product) => {
+                    const productDiv = document.createElement("div");
+                    productDiv.innerHTML = `
+                        <img src="${product.image}" alt="${product.name}" width="100">
+                        <p>${product.name} - $${product.price}</p>
+                        <button onclick="removeFromCart('${product.id}')">Remove</button>
+                    `;
+                    cartContainer.appendChild(productDiv);
+                });
+            }
+        });
+
+        function removeFromCart(productId) {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            cart = cart.filter((product) => product.id !== productId);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            location.reload();
+        }
+    </script>
 </body>
 </html>

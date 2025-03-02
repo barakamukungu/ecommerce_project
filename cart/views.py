@@ -68,24 +68,17 @@ def view_cart(request):
     return render(request, 'cart/cart.html', {'cart': cart, 'total_price': total_price})
 
 def add_to_cart(request, product_id):
+    # Get cart from session or create a new one
     cart = request.session.get('cart', {})
-
-    product = get_object_or_404(Product, id=product_id)
-
-    if str(product_id) in cart and isinstance(cart[str(product_id)], dict):
-        cart[str(product_id)]['quantity'] += 1
-    else:
-        cart[str(product_id)] = {
-            'name': product.name,
-            'price': float(product.price),  # Ensure it's a float
-            'quantity': 1,
-            'image': product.image.url if product.image else '',
-        }
-
+    
+    # Increase product quantity in cart
+    cart[product_id] = cart.get(product_id, 0) + 1
+    
+    # Save cart back to session
     request.session['cart'] = cart
-    request.session.modified = True  # Ensure Django saves the session
 
-    return redirect('view_cart')
+    # Redirect to the cart page after adding the product
+    return redirect('cart')
 
     cart = request.session.get('cart', {})
 
