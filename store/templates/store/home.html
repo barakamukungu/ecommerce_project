@@ -82,20 +82,17 @@
       </section>
 
       <div class="product-items-container">
-        {% for product in products %}
           <div class="item">
             <div class="item-layer">
-              <img src="{{ product.image.url }}" alt="{{ product.name }}">
+              <img src="product.image.url" alt="product.name">
             </div>
-            <h4 class="item-name">{{ product.name }}</h4>
-            <p class="item-price">${{ product.price }}</p>
+            <h4 class="item-name">product.name</h4>
+            <p class="item-price">$ product.price</p>
 
-            <form action="{% url 'add_to_cart' product.id %}" method="post">
-                {% csrf_token %}
+            <form action="url 'add_to_cart' product.id" method="post">
                 <button type="submit" class="btn-fill">Add to Cart</button>
             </form>
           </div>
-        {% endfor %}
       </div>
     </section>
 
@@ -129,7 +126,7 @@
       <div class="customer">
         <div class="customer-img">
           <div class="img img-three">
-            <img src="store/static/seven/2.png" alt="">
+            <img src="/ecommerce_project/store/static/seven/milan-popovic-kOnmHdLJTNI-unsplash (1).jpg" alt="">
           </div>
         </div>
         <h1 class="customer-name">John Doe</h1>
